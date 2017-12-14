@@ -1,3 +1,9 @@
+IBM-937(base EBCDIC)
+
+Start of Char : 0E
+
+End of Char   : 0F
+
 ## CONSOLE 
 ```
 UTF-8:E4BDA0E5A5BD313233E8AC9D414243
