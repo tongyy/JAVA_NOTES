@@ -1,7 +1,6 @@
-IBM-937(base EBCDIC)
+### IBM-937(base EBCDIC)
 
-Start of Char : 0E
-
+Start of Char : 0E  
 End of Char   : 0F
 
 ## CONSOLE 
