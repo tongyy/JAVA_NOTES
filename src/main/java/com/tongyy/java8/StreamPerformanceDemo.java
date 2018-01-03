@@ -16,12 +16,10 @@ public class StreamPerformanceDemo {
 		
 		//parallel stream
 		Stream<Integer> parallelStream = myList.parallelStream();
+			
+		logTime(sequentialStream);
 		
-		//using lambda with Stream API, filter example
-		Stream<Integer> highNums = parallelStream.filter(p -> p > 90);
-		logTime(highNums);
-		Stream<Integer> highNumsSeq = sequentialStream.filter(p -> p > 90);
-		logTime(highNumsSeq);
+		logTime(parallelStream);
 
 	}
 	
@@ -29,7 +27,7 @@ public class StreamPerformanceDemo {
 		long startTime = System.nanoTime();
 		s.forEach(p -> {
 			try {
-				Thread.sleep(500);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
