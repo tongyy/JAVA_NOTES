@@ -4,6 +4,7 @@
 .settings/*
 bin/*
 /build/
+Keypair
 
 # Ignore Gradle GUI config
 gradle-app.setting
