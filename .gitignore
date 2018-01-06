@@ -1,6 +1,9 @@
 .gradle
 .classpath
+# eclipse
 .project
+# intellij
+.idea
 .settings/*
 bin/*
 /build/

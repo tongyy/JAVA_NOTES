@@ -1,10 +1,13 @@
 package com.tongyy.java8;
 
+import com.tongyy.src.utils.LogTime;
+import com.tongyy.src.utils.LogTimeTool;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class StreamPerformanceDemo {
+public class StreamPerformanceDemo extends LogTimeTool{
 
 	public static void main(String[] args) {
 		List<Integer> myList = new ArrayList<>();
@@ -17,15 +20,14 @@ public class StreamPerformanceDemo {
 		// parallel stream
 		Stream<Integer> parallelStream = myList.parallelStream();
 
-		logTime(sequentialStream);
+		logTime(()->testStream(sequentialStream));
 
-		logTime(parallelStream);
+		logTime(()->testStream(parallelStream));
+
 
 	}
-
-	private static void logTime(Stream<Integer> s) {
-		long startTime = System.nanoTime();
-		s.forEach(p -> {
+	private static void testStream(Stream<Integer> s) {
+		s.forEach(c -> {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
@@ -33,11 +35,5 @@ public class StreamPerformanceDemo {
 				e.printStackTrace();
 			}
 		});
-		long endTime = System.nanoTime();
-
-		long duration = (endTime - startTime);
-		System.out.print(duration);
-		double seconds = (double) duration / 1000000000.0;
-		System.out.println("  secondes:" + seconds);
 	}
 }
